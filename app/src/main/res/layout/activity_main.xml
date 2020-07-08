@@ -6,19 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp">
+        android:layout_marginEnd="20dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
 
             <EditText
                 android:id="@+id/editTextTextPersonName"
@@ -26,72 +38,80 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="Enter Handle" />
+                android:hint="Enter Handle"
+                android:inputType="textPersonName" />
 
             <Button
                 android:id="@+id/button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Submit"
-                android:onClick="submitClicked"/>
+                android:onClick="submitClicked"
+                android:text="Submit" />
         </LinearLayout>
 
         <TextView
             android:id="@+id/textViewHandle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Handle"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:text="Handle" />
+
         <TextView
             android:id="@+id/textViewFirstName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="FirstName"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:text="FirstName" />
+
         <TextView
             android:id="@+id/textViewLastname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lastname"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:text="Lastname" />
+
         <TextView
             android:id="@+id/textViewRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rating"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:text="Rating" />
+
         <TextView
             android:id="@+id/textViewContribution"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contribution"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:text="Contribution" />
+
         <TextView
             android:id="@+id/textViewOrganisation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Org"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:text="Org" />
+
         <TextView
             android:id="@+id/textViewRank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rank"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:text="Rank" />
+
         <TextView
             android:id="@+id/textViewMaxRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MaxRating"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:text="MaxRating" />
+
         <TextView
             android:id="@+id/textViewMaxRank"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="MaxRank"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:text="MaxRank" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

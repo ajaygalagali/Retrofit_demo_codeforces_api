@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import com.astro.retrofittest.data_cf.cf_api
@@ -22,6 +23,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
+
+    var progressBar:ProgressBar?=null
 
     var editTextInput:EditText? = null
 
@@ -64,6 +67,8 @@ class MainActivity : AppCompatActivity() {
 
         editTextInput = findViewById(R.id.editTextTextPersonName)
 
+        progressBar = findViewById(R.id.progressBar)
+
 
 
 
@@ -73,8 +78,11 @@ class MainActivity : AppCompatActivity() {
 
 
     fun submitClicked(view: View) {
+        progressBar?.visibility = View.VISIBLE
         val userInput:String = editTextInput?.text.toString()
         if(userInput.isBlank()){
+            progressBar?.visibility = View.INVISIBLE
+
             Toast.makeText(applicationContext,"Enter Username",Toast.LENGTH_SHORT).show()
         }else{
             val apiService = cf_api()
@@ -95,6 +103,8 @@ class MainActivity : AppCompatActivity() {
                     if(response.code().equals(400)){
                         Toast.makeText(applicationContext,"User not found",Toast.LENGTH_SHORT).show()
                     }else if(response.code().equals(200)){
+                        progressBar?.visibility = View.INVISIBLE
+
                         val data = response.body()
 
 
